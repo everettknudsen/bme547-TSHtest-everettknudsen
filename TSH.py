@@ -43,6 +43,7 @@ def tsh_diagnosis(patient):
             diagnosis = 'normal thyroid function'
     patient['Diagnosis'] = diagnosis
     patient['TSH Values'] = tsh_sorted
+    return diagnosis
 
 
 def retrieve_diagnosis(patient):
