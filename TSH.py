@@ -1,8 +1,11 @@
 def main():
     filename = 'test_data.txt'
-    first_person = create_person(filename, 5)
-    tsh_diagnosis(first_person)
-    retrieve_diagnosis(first_person)
+    pat_nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for x in pat_nums:
+        person = create_person(filename, x)
+        tsh_diagnosis(person)
+        # retrieve_patient_info(person)
+        save_patient_files(person)
 
 
 def create_person(filename, patient_num):
@@ -46,11 +49,30 @@ def tsh_diagnosis(patient):
     return diagnosis
 
 
-def retrieve_diagnosis(patient):
-    y = patient['Diagnosis']
-    print(y)
-    z = patient['TSH Values']
-    print(z)
+def retrieve_patient_info(patient):
+    first_name = patient['First Name']
+    last_name = patient['Last Name']
+    age = patient['Age']
+    sex = patient['Sex']
+    diagnosis = patient['Diagnosis']
+    tsh_values = patient['TSH Values']
+
+    print('First Name: {} {}'.format(first_name, last_name))
+    print('Age: {}'.format(age))
+    print('Sex: {}'.format(sex))
+    print('Diagnosis: {}'.format(diagnosis))
+    print('TSH Values: {}'.format(tsh_values))
+
+
+def save_patient_files(patient):
+    import json
+    full_name = [patient['First Name'], patient['Last Name']]
+    d = '-'
+    file_type = '.json'
+    full_name = d.join(full_name) + file_type
+    out_file = open(full_name, 'w')
+    json.dump(patient, out_file)
+    out_file.close()
 
 
 if __name__ == '__main__':
