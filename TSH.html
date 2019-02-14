@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TSH module &#8212; TSH 0.0.1 documentation</title>
+    <link rel="stylesheet" href="docs/_build/html/_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="docs/_build/html/_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="docs/_build/html/_static/documentation_options.js"></script>
+    <script type="text/javascript" src="docs/_build/html/_static/jquery.js"></script>
+    <script type="text/javascript" src="docs/_build/html/_static/underscore.js"></script>
+    <script type="text/javascript" src="docs/_build/html/_static/doctools.js"></script>
+    <script type="text/javascript" src="docs/_build/html/_static/language_data.js"></script>
+    <link rel="index" title="Index" href="docs/_build/html/genindex.html" />
+    <link rel="search" title="Search" href="docs/_build/html/search.html" />
+    <link rel="next" title="test_TSH module" href="test_TSH.html" />
+    <link rel="prev" title="Welcome to TSH’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="docs/_build/html/_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-TSH">
+<span id="tsh-module"></span><h1>TSH module<a class="headerlink" href="#module-TSH" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="TSH.create_person">
+<code class="descclassname">TSH.</code><code class="descname">create_person</code><span class="sig-paren">(</span><em>filename</em>, <em>patient_num</em><span class="sig-paren">)</span><a class="headerlink" href="#TSH.create_person" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> – the data file which has all of</li>
+<li><strong>patient information stored in it to be</strong> (<em>the</em>) – </li>
+<li><strong>into a unique patient dictionary</strong> (<em>made</em>) – </li>
+<li><strong>patient_num</strong> – a list which specifies</li>
+<li><strong>many patients are in the file filename. Used to loop</strong> (<em>how</em>) – </li>
+<li><strong>the patients in the file</strong> (<em>through</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a unique patient dictionary with
+First Name, Last Name, Age, Sex, Diagnosis, and TSH Values
+Diagnosis remains undiagnosed until run through tsh_diagnosis()</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">person_dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="TSH.determine_patient_number">
+<code class="descclassname">TSH.</code><code class="descname">determine_patient_number</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#TSH.determine_patient_number" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> – takes an input file with patient information.</li>
+<li><strong>remove the last line--it is assumed this line contains</strong> (<em>will</em>) – </li>
+<li><strong>the word END. Then</strong><strong>, </strong><strong>it is assumed that a patient will</strong> (<em>only</em>) – </li>
+<li><strong>only four lines of information</strong><strong>, </strong><strong>so 1 patient = 4 lines</strong> (<em>take</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a list of integers which will be used to loop
+through the total patients for the
+dictionary_and_diagnostic() function</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">pat_list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="TSH.dictionary_and_diagnostic">
+<code class="descclassname">TSH.</code><code class="descname">dictionary_and_diagnostic</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#TSH.dictionary_and_diagnostic" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> – takes filename.txt assuming patient</li>
+<li><strong>up 4 lines/ patient and has final line with &quot;END&quot;</strong> (<em>takes</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Returns: json file with proper TSH diagnosis
+based on TSH values. The output file is in format First-Last.json</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="TSH.main">
+<code class="descclassname">TSH.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TSH.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns: the main function of the code which
+will run the dictionary_and_diagnosis on a data file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="TSH.retrieve_patient_info">
+<code class="descclassname">TSH.</code><code class="descname">retrieve_patient_info</code><span class="sig-paren">(</span><em>patient</em><span class="sig-paren">)</span><a class="headerlink" href="#TSH.retrieve_patient_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>THIS FUNCTION IS NOT ENTIRELY NECESSARY TO RUN THE PROGRAM,
+IT WAS MADE IN ORDER TO CHECK FOR PROPER FUNCTIONALITY</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>patient</strong> – takes the fully modified patient</li>
+<li><strong>and outputs each key and definition</strong> (<em>dictionary</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">prints the keys and definitions
+of the modified patient dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="TSH.save_patient_files">
+<code class="descclassname">TSH.</code><code class="descname">save_patient_files</code><span class="sig-paren">(</span><em>patient</em><span class="sig-paren">)</span><a class="headerlink" href="#TSH.save_patient_files" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>patient</strong> – takes the fully modified patient</li>
+<li><strong>and writes a json file in the format</strong> (<em>dictionary</em>) – </li>
+<li><strong>which contains all the</strong> (<em>First-Last.json</em>) – </li>
+<li><strong>from the dictionary.</strong> (<em>information</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">will create a json file with all the
+information for the patient and TSH diagnosis.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="TSH.tsh_diagnosis">
+<code class="descclassname">TSH.</code><code class="descname">tsh_diagnosis</code><span class="sig-paren">(</span><em>patient</em><span class="sig-paren">)</span><a class="headerlink" href="#TSH.tsh_diagnosis" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>patient</strong> – the unique patient dictionary created</li>
+<li><strong>create_person</strong><strong>(</strong><strong>)</strong><strong> This function pulls TSH values and</strong> (<em>in</em>) – </li>
+<li><strong>an appropriate diagnosis of the patient.</strong> (<em>makes</em>) – </li>
+<li><strong>then modifies the diagnosis and</strong> (<em>It</em>) – </li>
+<li><strong>the TSH values low to high.</strong> (<em>sorts</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">which is then stored in the appropriate
+location within the patient’s unique dictionary</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">diagnosis</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TSH</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TSH module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_TSH.html">test_TSH module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to TSH’s documentation!</a></li>
+      <li>Next: <a href="test_TSH.html" title="next chapter">test_TSH module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="docs/_build/html/search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Everett Knudsen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="docs/_build/html/_sources/TSH.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
