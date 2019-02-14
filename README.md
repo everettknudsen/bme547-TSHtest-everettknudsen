@@ -10,4 +10,6 @@ The function retrieve_patient_info() is not explicitly used in the dictionary_an
 
 I have also included documentation within the code for more information about what each function does. Sphinx documentation is also available in the index.html file!
 
+Please ignore the json files folder, it is empty.
+
 On GitHub, I have included the json files from the test_data.txt file. All are included for reference. 
