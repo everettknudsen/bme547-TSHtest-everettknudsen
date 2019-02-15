@@ -13,3 +13,5 @@ I have also included documentation within the code for more information about wh
 Please ignore the json files folder, it is empty.
 
 On GitHub, I have included the json files from the test_data.txt file. All are included for reference. 
+
+NOTE: I added my v1.0.0 tag at 1:00 am when I realized I had forgotten to tag the code! Sorry for the delay!
